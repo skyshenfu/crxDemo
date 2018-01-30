@@ -1,0 +1,27 @@
+{
+    "background": {
+        "presistent": true
+    },
+    "browser_action": {
+        "default_icon": "images/logo.png",
+        "default_title": "自动导入插件"
+    },
+    "description": "啥也没有呢",
+    "icons": {
+        "128": "images/logo.png",
+        "16": "images/logo.png",
+        "48": "images/logo.png"
+    },
+    "manifest_version": 2,
+    "name": "自动导入插件",
+    "permissions": [ "notifications", "unlimitedStorage","*://a.dper.com/*", "downloads", "storage", "contextMenus", "webRequest", "webRequestBlocking"],
+    "version": "0.1.0",
+    "web_accessible_resources": ["js/jquery-3.3.1.min.js","js/content.js"],
+    "content_scripts": [  
+    {  
+      "matches": ["*://a.dper.com/*"],//目标页面地址  
+      "js": ["js/jquery-3.3.1.min.js","js/content.js"],
+      "run_at":"document_end"
+    }  
+  ]
+}
